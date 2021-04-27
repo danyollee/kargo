@@ -25,7 +25,6 @@ func fill_map(m map[string]string) {
 func main() {
 
 
-	fmt.Println("length of args is ", len(os.Args[1:]))
 	input_array := make([]int, len(os.Args[1:]))
 
 	for i, v := range(os.Args[1:]) {
@@ -33,17 +32,12 @@ func main() {
 		input_array[i], _ = strconv.Atoi(v)
 	}
 
-
-	// create a test array
-	array := [6]int{1,3,5,7,9, 35}
-
 	// create and fill map of int->string
 	m := make(map[string]string)
-
 	fill_map(m)
 
-	fmt.Println("\n\n-- TEST ARRAY --\n", array, "\n-----------------\n\n")
-	for _, v := range(array) {
+	fmt.Println("\n\n-- TEST ARRAY --\n", input_array, "\n-----------------\n\n")
+	for _, v := range(input_array) {
 		s := strconv.Itoa(v)
 		for _, c := range(s) {
 			fmt.Print(m[string(c)])
