@@ -32,12 +32,14 @@ func main() {
 
 	fill_map(m)
 
-	fmt.Println(array)
+	fmt.Println("\n\n-- TEST ARRAY --\n", array, "\n-----------------\n\n")
 	for _, v := range(array) {
 		s := strconv.Itoa(v)
 		for _, c := range(s) {
-			fmt.Println(m[string(c)])
+			fmt.Print(m[string(c)])
 		}
+		fmt.Print(",")
 	}
+	fmt.Print("\n")
 
 }
