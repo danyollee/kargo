@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
+// fills map to convert int to string output
 func fill_map(m map[int]string) {
 
 	m[0] = "Zero"
@@ -21,24 +25,17 @@ func main() {
 	fmt.Println("Hello wrld")
 
 	// create a test array
-	// array := [10]int{0,1,2,3,4,5,6,7,8,9}
-	array := [5]int{1,3,5,7,9}
+	array := [6]int{1,3,5,7,9, 35}
 	fmt.Println(array)
 
-	// loop thru array
-
-	for i, val := range array {
-		fmt.Println(i, val)
-	}
-
-	// Maps are similar to a python dictionary
-	// specify key/val pair 
+	// create and fill map of int->string
 	m:= make(map[int]string)
 
 	fill_map(m)
 
-	fmt.Println(m)
-	fmt.Println(m[5])
-	fmt.Println(m[0])
-	fmt.Println(m[3])
+
+	for _, val := range array {
+		fmt.Println(strconv.Itoa(val))
+		// fmt.Println(m[val])
+	}
 }
