@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"os"
 )
 
 // fills map to convert int to string output
@@ -22,7 +23,12 @@ func fill_map(m map[string]string) {
 }
 
 func main() {
-	fmt.Println("Hello wrld")
+
+
+	for _, v := range(os.Args[1:]) {
+		fmt.Print(v)
+	}
+
 
 	// create a test array
 	array := [6]int{1,3,5,7,9, 35}
